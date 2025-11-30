@@ -13,7 +13,8 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/portfolio')
+    const apiUrl = `${import.meta.env.VITE_API_URL || ''}/api/portfolio`;
+    fetch(apiUrl)
       .then(res => res.json())
       .then(data => {
         setPortfolio(data);
