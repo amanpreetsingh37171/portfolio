@@ -47,5 +47,10 @@ export const portfolioData = {
     linkedin: "https://www.linkedin.com/in/amanpreetsingh37171",
     github: "https://github.com/amanpreetsingh37171",
     twitter: ""
+  },
+  resume: {
+    name: "Amanpreet Singh",
+    resumeUrl: "/assets/Amanpreet_Singh_Resume.pdf",
+    summary: "Experienced Data Scientist and Full-Stack Developer with expertise in ML, AI, and Web Development"
   }
 };

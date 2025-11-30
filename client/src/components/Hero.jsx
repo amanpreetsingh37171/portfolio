@@ -1,7 +1,18 @@
 import React from 'react';
 
-function Hero({ data }) {
+function Hero({ data, resume }) {
   if (!data) return null;
+
+  const handleDownloadResume = () => {
+    if (resume?.resumeUrl) {
+      const link = document.createElement('a');
+      link.href = resume.resumeUrl;
+      link.download = `${resume.name || data.name || 'Resume'}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -31,6 +42,17 @@ function Hero({ data }) {
           >
             View My Work
           </a>
+          {resume?.resumeUrl && (
+            <button
+              onClick={handleDownloadResume}
+              className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full font-medium transition-all duration-200 transform hover:scale-105 shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Download Resume
+            </button>
+          )}
           <a
             href="#contact"
             className="px-8 py-3 border-2 border-slate-600 hover:border-primary-500 text-slate-300 hover:text-primary-400 rounded-full font-medium transition-all duration-200"

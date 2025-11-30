@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import ResumeCV from './components/ResumeCV';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -36,10 +37,11 @@ function App() {
     <div className="min-h-screen bg-slate-900">
       <Navbar />
       <main>
-        <Hero data={portfolio?.hero} />
+        <Hero data={portfolio?.hero} resume={portfolio?.resume} />
         <About data={portfolio?.about} />
         <Skills data={portfolio?.skills} />
         <Projects data={portfolio?.projects} />
+        <ResumeCV data={portfolio?.resume} />
         <Contact data={portfolio?.contact} />
       </main>
       <Footer data={portfolio?.contact} />
