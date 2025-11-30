@@ -70,9 +70,9 @@ export const portfolioData = {
     }
   ],
   contact: {
-    email: "amanpreet@example.com",
-    linkedin: "https://linkedin.com/in/amanpreetsingh",
-    github: "https://github.com/amanpreetsingh",
-    twitter: "https://twitter.com/amanpreetsingh"
+    email: "amanpreetsingh37171@gmail.com",
+    linkedin: "https://www.linkedin.com/in/amanpreetsingh37171",
+    github: "https://github.com/amanpreetsingh37171",
+    twitter: ""
   }
 };
