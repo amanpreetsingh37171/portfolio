@@ -38,35 +38,8 @@ export const portfolioData = {
       description: "A full-featured fashion e-commerce website with product collections, shopping cart, user authentication, Razorpay payment integration, and customer-friendly policies including 7-day returns and 24/7 support.",
       technologies: ["React", "Node.js", "MongoDB", "Express", "Razorpay"],
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600",
-      github: "https://github.com/amanpreetsingh37171",
+      github: "https://github.com/amanpreetsingh37171/forever",
       live: "https://forever-frontend-ashy-nine.vercel.app"
-    },
-    {
-      id: 2,
-      title: "ML Prediction Model",
-      description: "A machine learning model for predictive analytics with data preprocessing, feature engineering, and model optimization.",
-      technologies: ["Python", "Scikit-learn", "Pandas", "NumPy"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600",
-      github: "https://github.com/amanpreetsingh37171",
-      live: ""
-    },
-    {
-      id: 3,
-      title: "Data Analytics Dashboard",
-      description: "Interactive dashboard for visualizing complex datasets with real-time charts and insightful metrics.",
-      technologies: ["Python", "Plotly", "Dash", "Pandas"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600",
-      github: "https://github.com/amanpreetsingh37171",
-      live: ""
-    },
-    {
-      id: 4,
-      title: "Deep Learning Image Classifier",
-      description: "A CNN-based image classification system trained on custom datasets with high accuracy.",
-      technologies: ["Python", "TensorFlow", "Keras", "OpenCV"],
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600",
-      github: "https://github.com/amanpreetsingh37171",
-      live: ""
     }
   ],
   contact: {
