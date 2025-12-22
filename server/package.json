@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3"
+  },
+  "scripts-dev": {
+    "dev": "node src/index.js",
+    "client": "cd ../client && npm run dev",
+    "admin": "cd ../admin && npm run dev",
+    "all": "concurrently \"npm run dev\" \"npm run client\" \"npm run admin\""
+  }
+}
