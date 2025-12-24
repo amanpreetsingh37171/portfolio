@@ -7,26 +7,49 @@ import Contact from './models/Contact.js';
 import adminRoutes from './routes/admin.js';
 import { logError } from './utils/errorLogger.js';
 
+let isConnected = false;
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
 
+// const connectDB = async () => {
+//   const mongoURI = process.env.MONGODB_URI;
+//   if (mongoURI) {
+//     try {
+//       await mongoose.connect(mongoURI);
+//       console.log('Connected to MongoDB');
+//     } catch (error) {
+//       console.log('MongoDB connection error:', error.message);
+//       console.log('Running without database - contact form will not persist');
+//     }
+//   } else {
+//     console.log('No MONGODB_URI found - running without database');
+//   }
+// };
+
 const connectDB = async () => {
+  if (isConnected) return;
+
   const mongoURI = process.env.MONGODB_URI;
-  if (mongoURI) {
-    try {
-      await mongoose.connect(mongoURI);
-      console.log('Connected to MongoDB');
-    } catch (error) {
-      console.log('MongoDB connection error:', error.message);
-      console.log('Running without database - contact form will not persist');
-    }
-  } else {
+  if (!mongoURI) {
     console.log('No MONGODB_URI found - running without database');
+    return;
+  }
+
+  try {
+    await mongoose.connect(mongoURI);
+    isConnected = true;
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.log('MongoDB connection error:', error.message);
+    console.log('Running without database - contact form will not persist');
   }
 };
+
 
 connectDB();
 
@@ -80,7 +103,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`);
-  logError('info', 'Server started successfully', null, null);
-});
+// app.listen(PORT, '0.0.0.0', () => {
+//   console.log(`Server running on port ${PORT}`);
+//   logError('info', 'Server started successfully', null, null);
+// });
+
+export default app;
